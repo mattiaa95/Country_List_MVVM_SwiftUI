@@ -17,7 +17,7 @@ struct RouterView: View {
             case .CountryList:
                 CountriesList(viewModel: self.model)
             case .CountryDetail:
-                CountriesList(viewModel: self.model)
+                CountryDetail()
         }
     }
 }
