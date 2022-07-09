@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE70FDDE28798DF3000EBDCF /* CountryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70FDDD28798DF3000EBDCF /* CountryDetail.swift */; };
+		DE70FDE128799789000EBDCF /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70FDE028799789000EBDCF /* MapView.swift */; };
 		DEC2B3422877FF500096E34D /* Country_ListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2B3412877FF500096E34D /* Country_ListApp.swift */; };
 		DEC2B3442877FF500096E34D /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2B3432877FF500096E34D /* RouterView.swift */; };
 		DEC2B3462877FF520096E34D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC2B3452877FF520096E34D /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE70FDDD28798DF3000EBDCF /* CountryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetail.swift; sourceTree = "<group>"; };
+		DE70FDE028799789000EBDCF /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		DEC2B33E2877FF500096E34D /* Country List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Country List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC2B3412877FF500096E34D /* Country_ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country_ListApp.swift; sourceTree = "<group>"; };
 		DEC2B3432877FF500096E34D /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
@@ -143,14 +147,13 @@
 			path = "Country ListUITests";
 			sourceTree = "<group>";
 		};
-		DEC2B36B287802560096E34D /* CountryList */ = {
+		DEC2B36B287802560096E34D /* CountryListUI */ = {
 			isa = PBXGroup;
 			children = (
-				DEC2B382287976CC0096E34D /* UI */,
-				DEC2B3762878AC8B0096E34D /* CountryModel.swift */,
-				DEC2B3802878BF3F0096E34D /* CountriesListViewModel.swift */,
+				DEC2B3782878ACC40096E34D /* CountriesList.swift */,
+				DEC2B384287976E60096E34D /* CountryCell.swift */,
 			);
-			path = CountryList;
+			path = CountryListUI;
 			sourceTree = "<group>";
 		};
 		DEC2B36C287802750096E34D /* Resources */ = {
@@ -192,20 +195,13 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
-		DEC2B382287976CC0096E34D /* UI */ = {
+		DEC2B38B287984970096E34D /* CountryDetailUI */ = {
 			isa = PBXGroup;
 			children = (
-				DEC2B3782878ACC40096E34D /* CountriesList.swift */,
-				DEC2B384287976E60096E34D /* CountryCell.swift */,
+				DE70FDDD28798DF3000EBDCF /* CountryDetail.swift */,
+				DE70FDE028799789000EBDCF /* MapView.swift */,
 			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		DEC2B38B287984970096E34D /* CountryDetail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CountryDetail;
+			path = CountryDetailUI;
 			sourceTree = "<group>";
 		};
 		DEC2B38C287984C00096E34D /* Routing */ = {
@@ -220,8 +216,10 @@
 		DEC2B38D287984E30096E34D /* CountryModule */ = {
 			isa = PBXGroup;
 			children = (
-				DEC2B36B287802560096E34D /* CountryList */,
-				DEC2B38B287984970096E34D /* CountryDetail */,
+				DEC2B38B287984970096E34D /* CountryDetailUI */,
+				DEC2B36B287802560096E34D /* CountryListUI */,
+				DEC2B3802878BF3F0096E34D /* CountriesListViewModel.swift */,
+				DEC2B3762878AC8B0096E34D /* CountryModel.swift */,
 			);
 			path = CountryModule;
 			sourceTree = "<group>";
@@ -357,6 +355,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE70FDDE28798DF3000EBDCF /* CountryDetail.swift in Sources */,
+				DE70FDE128799789000EBDCF /* MapView.swift in Sources */,
 				DEC2B37328787C030096E34D /* CountryFetcher.swift in Sources */,
 				DEC2B37C2878B28A0096E34D /* CountriesResponse.swift in Sources */,
 				DEC2B3442877FF500096E34D /* RouterView.swift in Sources */,

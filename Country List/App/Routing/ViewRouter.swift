@@ -13,5 +13,4 @@ class ViewRouter: ObservableObject {
 
 enum Views {
     case CountryList
-    case CountryDetail
 }

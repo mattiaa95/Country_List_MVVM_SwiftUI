@@ -13,19 +13,21 @@ struct CountryCell : View {
     var body: some View {
         HStack(alignment: .center, spacing: 10.0){
             AsyncImage(
-                url: URL(string: (country.flags?.png ?? country.flags?.svg) ?? "https://flagcdn.com/w320/it.png"),
+                url: URL(string: (country.flags?.png ?? country.flags?.svg) ?? ""),
                 content: { image in
                     image.resizable()
-                         .aspectRatio(contentMode: .fit)
-                         .frame(maxWidth: 35, maxHeight: 35)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 35, height: 25)
+                        .clipped()
+                        .border(Color.black)
                 },
                 placeholder: {
                     ProgressView()
                 }
             )
-            Text(country.name?.common ?? "Italy")
+            Text(country.name?.common ?? "")
             Spacer()
-            Image(systemName: "chevron.right").imageScale(.small)
         }
     }
 }
