@@ -66,9 +66,8 @@ struct CountryDetail: View {
                         Spacer()
                         
                         HStack{
-                            Text("Currency:")
-                            Text(String(country.currencies?.name ?? ""))
-                            Text(String(country.currencies?.symbol ?? ""))
+                            Text("Language:")
+                            Text(String(country.languages?.first?.value ?? ""))
                         }
                         .font(.subheadline)
                         .foregroundColor(.secondary)
