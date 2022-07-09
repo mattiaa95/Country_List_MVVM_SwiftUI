@@ -32,8 +32,8 @@ import SwiftUI
         }
     }
     
-    
-    init() {
+    func loadCountriesTest(){
+        
         if let path = Bundle.main.path(forResource: "CountyTest", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)                
@@ -47,6 +47,16 @@ import SwiftUI
                 self.onError = true
                 print("Failed to load Test Data")
             }
+        }
+    }
+    
+    init() {
+        countries = []
+    }
+    
+    init(previewData: Bool) {
+        if previewData {
+            loadCountriesTest()
         }
     }
     

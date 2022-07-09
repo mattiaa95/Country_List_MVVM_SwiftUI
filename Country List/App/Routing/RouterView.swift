@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RouterView: View {
+    
     @ObservedObject var model = CountriesListViewModel()
     @EnvironmentObject var viewRouter: ViewRouter
     

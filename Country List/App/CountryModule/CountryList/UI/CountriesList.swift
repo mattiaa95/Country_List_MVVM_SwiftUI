@@ -39,7 +39,7 @@ struct CountriesList: View {
 struct CountriesList_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CountriesList(viewModel: CountriesListViewModel.init())
+            CountriesList(viewModel: CountriesListViewModel.init(previewData:true))
         }
     }
 }
