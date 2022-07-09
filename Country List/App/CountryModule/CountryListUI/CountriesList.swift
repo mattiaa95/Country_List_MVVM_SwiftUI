@@ -10,28 +10,30 @@ import SwiftUI
 struct CountriesList: View {
     
     @ObservedObject var viewModel: CountriesListViewModel
-    @EnvironmentObject var viewRouter: ViewRouter
     
     var body: some View {
-        ZStack{
-        if viewModel.isLoading {ProgressView().zIndex(1)}
-            ListView()
-        }.alert(isPresented: $viewModel.onError) {NetworkAlert()}
+        NavigationView {
+            ZStack{
+                if viewModel.isLoading {ProgressView().zIndex(1)}
+                ListView()
+            }.alert(isPresented: $viewModel.onError) {NetworkAlert()}
+        }
     }
     
     func ListView() -> some View {
         return List(viewModel.countries) { country in
-            
-            CountryCell(country: country).onTapGesture {
-                viewRouter.currentView = .CountryDetail
+            NavigationLink {
+                CountryDetail(country: country)
+            } label: {
+                CountryCell(country: country)
             }
             
         }.task {
             await viewModel.loadCountries()
-        }
+        }.navigationTitle("County List")
     }
     
-//    TODO: Get Message from ViewModel
+    //    TODO: Get Message from ViewModel
     func NetworkAlert() -> Alert {
         return Alert(title: Text("Network Error"),
                      message:  Text("Please try again later!"),
@@ -46,3 +48,5 @@ struct CountriesList_Previews: PreviewProvider {
         }
     }
 }
+
+

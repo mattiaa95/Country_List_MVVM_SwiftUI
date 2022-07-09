@@ -16,8 +16,6 @@ struct RouterView: View {
         switch viewRouter.currentView {
             case .CountryList:
                 CountriesList(viewModel: self.model)
-            case .CountryDetail:
-                CountryDetail()
         }
     }
 }
